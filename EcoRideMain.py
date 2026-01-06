@@ -22,6 +22,17 @@ class Vehicle:
     def rental_price(self, rental_price):
         if self.rental_price>=0:
             self.__rental_price = rental_price
+
+#UC-3 Inheritance And Specialisation
+class ElectricCar(Vehicle):
+    def __init__(self, vehicle_id, model, battery_percentage, seating_capacity):
+        super().__init__(vehicle_id, model, battery_percentage)
+        self.seating_capacity = seating_capacity
+
+class ElectricScooter(Vehicle):
+    def __init__(self, vehicle_id, model, battery_percentage, max_speed_limit):
+        super().__init__(vehicle_id, model, battery_percentage)
+        self.max_speed_limit = max_speed_limit
 def main():
     print("Welcome to Eco-Rider Urban Mobility System")
 if __name__ == "__main__":
