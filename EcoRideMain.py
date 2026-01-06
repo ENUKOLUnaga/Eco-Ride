@@ -1,5 +1,6 @@
+from abc import ABC, abstractmethod
 # UC 1,2: Vehicle Base Class
-class Vehicle:
+class Vehicle(ABC):
     def __init__(self,vehicle_id,model,battery_percentage):
         self.vehicle_id = vehicle_id
         self.model = model
@@ -22,6 +23,10 @@ class Vehicle:
     def rental_price(self, rental_price):
         if self.rental_price>=0:
             self.__rental_price = rental_price
+    # UC 4: Abstraction
+    @abstractmethod
+    def calculate_trip_cost(self, value):
+        pass
 
 #UC-3 Inheritance And Specialisation
 class ElectricCar(Vehicle):
