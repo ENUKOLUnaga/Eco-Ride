@@ -30,3 +30,5 @@ class Vehicle:
     @abstractmethod
     def calculate_trip_cost(self, value):
         pass
+    def __str__(self):
+        return f"{self.vehicle_id} | {self.model} | Battery: {self.battery_percentage}%"
