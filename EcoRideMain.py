@@ -1,4 +1,4 @@
-from Vehicle import Vehicle
+from src.Vehicle import Vehicle
 
 print("Welcome to Eco-Ride Urban Mobility System")
 
