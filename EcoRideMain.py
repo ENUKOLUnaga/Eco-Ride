@@ -1,6 +1,5 @@
-from Vehicle import Vehicle
-
-print("Welcome to Eco-Ride Urban Mobility System")
-
-v1 = Vehicle("V001", "Tesla Model 3", 90)
-print(v1.model, v1.battery_percentage)
+from src.Vehicle import Vehicle
+def main():
+    print("Welcome to EcoRide Urban Mobility")
+if __name__ == "__main__":
+    main()
