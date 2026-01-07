@@ -27,6 +27,9 @@ class Vehicle:
             self.__rental_price = price
         else:
             raise ValueError("Rental price cannot be negative")
+    #UC7-Data Integrity
+    def __eq__(self, other):
+        return isinstance(other, Vehicle) and self.vehicle_id == other.vehicle_id
     @abstractmethod
     def calculate_trip_cost(self, value):
         pass

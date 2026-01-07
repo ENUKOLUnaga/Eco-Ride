@@ -13,7 +13,6 @@ def main():
     while True:
         show_menu()
         choice = input("Enter choice: ")
-        
         if choice == "1":
             hub_name = input("Enter Hub Name: ")
             manager.add_hub(hub_name)
