@@ -7,7 +7,7 @@ def show_menu():
     print("2. Add Vehicle to Hub")
     print("3. View Vehicles in Hub")
     print("4. Search by hub")
-    print("5. Search by")
+    print("5. Search by Battery")
     print("6. Categorized View")
     print("7. Exit")
 def main():
@@ -65,14 +65,12 @@ def main():
         #UC9-Categorized view
         elif choice == "6":  
             categorized = manager.categorize_by_type()
-
             print("\n--- Electric Cars ---")
             if categorized["ElectricCar"]:
                 for car in categorized["ElectricCar"]:
                     print(car)
             else:
                 print("No cars available")
-
             print("\n--- Electric Scooters ---")
             if categorized["ElectricScooter"]:
                 for scooter in categorized["ElectricScooter"]:
