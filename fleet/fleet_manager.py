@@ -10,7 +10,7 @@ class FleetManager:
     def add_vehicle_to_hub(self, hub_name, vehicle):
         if hub_name not in self.hubs:
             raise ValueError("Hub does not exist")
-        #Checking for duplicate vehicles by list comprehension
+    #Checking for duplicate vehicles by list comprehension
         existing_ids = [v.vehicle_id for v in self.hubs[hub_name]]
         if vehicle.vehicle_id in existing_ids:
             raise ValueError("Duplicate Vehicle ID not allowed in this hub")
@@ -25,8 +25,7 @@ class FleetManager:
             v for hub in self.hubs.values()
             for v in hub if v.battery_percentage > threshold
         ]
-    #uc-9 Categorised view
-    # UC-9: Categorized View
+    #uc-9 Categorized view
     def categorize_by_type(self):
         categories = {
             "ElectricCar": [],

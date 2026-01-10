@@ -62,7 +62,8 @@ def main():
             results = manager.search_by_battery(80)
             for v in results:
                 print(v)
-        elif choice == "6":  # UC-9
+        #UC9-Categorized view
+        elif choice == "6":  
             categorized = manager.categorize_by_type()
 
             print("\n--- Electric Cars ---")
