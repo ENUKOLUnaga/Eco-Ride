@@ -8,7 +8,8 @@ def show_menu():
     print("3. View Vehicles in Hub")
     print("4. Search by hub")
     print("5. Search by")
-    print("6. Exit")
+    print("6. Categorized View")
+    print("7. Exit")
 def main():
     print("Welcome to Eco-Ride Urban Mobility System")
     manager = FleetManager()
@@ -61,7 +62,23 @@ def main():
             results = manager.search_by_battery(80)
             for v in results:
                 print(v)
-        elif choice == "6":
+        elif choice == "6":  # UC-9
+            categorized = manager.categorize_by_type()
+
+            print("\n--- Electric Cars ---")
+            if categorized["ElectricCar"]:
+                for car in categorized["ElectricCar"]:
+                    print(car)
+            else:
+                print("No cars available")
+
+            print("\n--- Electric Scooters ---")
+            if categorized["ElectricScooter"]:
+                for scooter in categorized["ElectricScooter"]:
+                    print(scooter)
+            else:
+                print("No scooters available")
+        elif choice == "7":
             print("Exiting system...")
             break
         else:

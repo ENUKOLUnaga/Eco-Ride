@@ -1,3 +1,5 @@
+from src.electric_car import ElectricCar
+from src.electric_scooter import ElectricScooter
 class FleetManager:
     def __init__(self):
         self.hubs = {}
@@ -23,4 +25,18 @@ class FleetManager:
             v for hub in self.hubs.values()
             for v in hub if v.battery_percentage > threshold
         ]
+    #uc-9 Categorised view
+    # UC-9: Categorized View
+    def categorize_by_type(self):
+        categories = {
+            "ElectricCar": [],
+            "ElectricScooter": []
+        }
+        for vehicles in self.hubs.values():
+            for vehicle in vehicles:
+                if isinstance(vehicle, ElectricCar):
+                    categories["ElectricCar"].append(vehicle)
+                elif isinstance(vehicle, ElectricScooter):
+                    categories["ElectricScooter"].append(vehicle)
+        return categories
 
