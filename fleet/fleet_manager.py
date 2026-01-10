@@ -38,4 +38,21 @@ class FleetManager:
                 elif isinstance(vehicle, ElectricScooter):
                     categories["ElectricScooter"].append(vehicle)
         return categories
+    # UC-10: Fleet Analytics
+    def fleet_status_summary(self):
+        summary = {
+            "Available": 0,
+            "On Trip": 0,
+            "Under Maintenance": 0
+        }
+    # Count vehicles in all hubs
+        for vehicles in self.hubs.values():
+            for vehicle in vehicles:
+                status = vehicle.get_maintenance_status()
+                if status in summary:
+                    summary[status] += 1
+                else:
+                    summary[status] = 1
+        return summary
+
 
