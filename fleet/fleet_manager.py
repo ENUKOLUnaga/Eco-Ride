@@ -54,5 +54,12 @@ class FleetManager:
                 else:
                     summary[status] = 1
         return summary
+    # UC-11: Alphabetical Sorting by Model
+    def sort_vehicles_by_model(self, hub_name):
+        if hub_name in self.hubs:
+            self.hubs[hub_name].sort(key=lambda v: v.model)
+            print(f"Vehicles in hub '{hub_name}' sorted alphabetically by model.")
+        else:
+            print(f"Hub '{hub_name}' does not exist.")
 
 

@@ -10,7 +10,8 @@ def show_menu():
     print("5. Search by Battery")
     print("6. Categorized View")
     print("7. Fleet analysis")
-    print("8. Exit")
+    print("8. sort by Hub name")
+    print("9. Exit")
 def main():
     print("Welcome to Eco-Ride Urban Mobility System")
     manager = FleetManager()
@@ -78,12 +79,18 @@ def main():
                     print(scooter)
             else:
                 print("No scooters available")
-        elif choice == "7":  # UC-10: Fleet Analytics
+        # UC-10: Fleet Analytics
+        elif choice == "7":  
             summary = manager.fleet_status_summary()
             print("\n--- Fleet Status Summary ---")
             for status, count in summary.items():
                 print(f"{status}: {count}")
-        elif choice == "8":
+        elif choice == "8":  # UC-11: Alphabetical Sorting
+            hub = input("Enter Hub Name to sort: ")
+            manager.sort_vehicles_by_model(hub)
+            for v in manager.search_by_hub(hub):
+                print(v)
+        elif choice == "9":
             print("Exiting system...")
             break
         else:
