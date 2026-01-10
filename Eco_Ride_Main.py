@@ -6,7 +6,9 @@ def show_menu():
     print("1. Add Hub")
     print("2. Add Vehicle to Hub")
     print("3. View Vehicles in Hub")
-    print("4. Exit")
+    print("4. Search by hub")
+    print("5. Search by")
+    print("6. Exit")
 def main():
     print("Welcome to Eco-Ride Urban Mobility System")
     manager = FleetManager()
@@ -42,7 +44,24 @@ def main():
             else:
                 for v in vehicles:
                     print(v)
+        #Uc-4 Search functionality
+        #search by hub
         elif choice == "4":
+            hub = input("Enter Hub Name: ")
+            vehicles = manager.search_by_hub(hub)
+
+            if not vehicles:
+                print("No vehicles found.")
+            else:
+                for v in vehicles:
+                    print(v)
+        #search by battery
+        elif choice == "5":
+            print("\nVehicles with Battery > 80%")
+            results = manager.search_by_battery(80)
+            for v in results:
+                print(v)
+        elif choice == "6":
             print("Exiting system...")
             break
         else:
