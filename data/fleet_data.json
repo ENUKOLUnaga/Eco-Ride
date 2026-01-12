@@ -1,0 +1,28 @@
+{
+    "Hyd": [
+        {
+            "vehicle_id": "9",
+            "model": "3",
+            "battery": 87,
+            "type": "ElectricCar"
+        },
+        {
+            "vehicle_id": "8",
+            "model": "7",
+            "battery": 65,
+            "type": "ElectricCar"
+        },
+        {
+            "vehicle_id": "7",
+            "model": "65",
+            "battery": 68,
+            "type": "ElectricCar"
+        },
+        {
+            "vehicle_id": "65",
+            "model": "98",
+            "battery": 98,
+            "type": "ElectricScooter"
+        }
+    ]
+}

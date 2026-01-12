@@ -2,6 +2,7 @@ from src.electric_car import ElectricCar
 from src.electric_scooter import ElectricScooter
 from fleet.fleet_manager import FleetManager
 from utils.csv_handler import save_to_csv
+from utils.json_handler import save_to_json
 #UC6-Fleet management
 def show_menu():
     print("1. Add Hub")
@@ -14,7 +15,8 @@ def show_menu():
     print("8. sort by Hub name")
     print("9. sort by fare price(high to low)")
     print("10.save data to csv")
-    print("11.Exit")
+    print("11.save data to json")
+    print("12.Exit")
 def main():
     print("Welcome to Eco-Ride Urban Mobility System")
     manager = FleetManager()
@@ -88,7 +90,8 @@ def main():
             print("\n--- Fleet Status Summary ---")
             for status, count in summary.items():
                 print(f"{status}: {count}")
-        elif choice == "8":  # UC-11: Alphabetical Sorting
+        # UC-11: Alphabetical Sorting
+        elif choice == "8":
             hub = input("Enter Hub Name to sort: ")
             manager.sort_vehicles_by_model(hub)
             for v in manager.search_by_hub(hub):
@@ -100,11 +103,16 @@ def main():
             manager.sort_by_fare_price(hub, distance)
             for v in manager.search_by_hub(hub):
                 print(v)
+        #UC-13 save date to csv
         elif choice == "10":
             save_to_csv("data/fleet_data.csv", manager.hubs)
             print("Saved to CSV.")
+        #UC-14 save data to json
         elif choice == "11":
-            print("Exiting system...")
+            save_to_json("data/fleet_data.json", manager.hubs)
+            print("Saved to JSON.")
+        elif choice == "12":
+            print("Thank you for using Eco-Ride!")
             break
         else:
             print("Invalid choice!")

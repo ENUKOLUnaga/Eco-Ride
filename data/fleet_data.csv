@@ -1,3 +1,5 @@
 Hub,Vehicle ID,Model,Battery,Type
-Hyd,1,23,90,ElectricCar
-Hyd,6,65,69,ElectricCar
+Hyd,9,3,87,ElectricCar
+Hyd,8,7,65,ElectricCar
+Hyd,7,65,68,ElectricCar
+Hyd,65,98,98,ElectricScooter
