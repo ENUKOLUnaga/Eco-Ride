@@ -61,5 +61,14 @@ class FleetManager:
             print(f"Vehicles in hub '{hub_name}' sorted alphabetically by model.")
         else:
             print(f"Hub '{hub_name}' does not exist.")
+    #UC-12: Advanced Sorting by Fare Price
+    def sort_by_fare_price(self, hub_name, distance=10):
+        if hub_name not in self.hubs:
+            raise ValueError("Hub does not exist")
+        self.hubs[hub_name].sort(
+            key=lambda vehicle: vehicle.calculate_trip_cost(distance),
+            reverse=True
+        )
+
 
 

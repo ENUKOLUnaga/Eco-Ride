@@ -11,7 +11,8 @@ def show_menu():
     print("6. Categorized View")
     print("7. Fleet analysis")
     print("8. sort by Hub name")
-    print("9. Exit")
+    print("9. sort by fare price(high to low)")
+    print("10. Exit")
 def main():
     print("Welcome to Eco-Ride Urban Mobility System")
     manager = FleetManager()
@@ -90,7 +91,14 @@ def main():
             manager.sort_vehicles_by_model(hub)
             for v in manager.search_by_hub(hub):
                 print(v)
+        #Advanced Sorting by fare price
         elif choice == "9":
+            hub = input("Enter Hub Name: ")
+            distance = float(input("Enter distance/minutes: "))
+            manager.sort_by_fare_price(hub, distance)
+            for v in manager.search_by_hub(hub):
+                print(v)
+        elif choice == "10":
             print("Exiting system...")
             break
         else:
