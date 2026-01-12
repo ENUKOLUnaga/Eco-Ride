@@ -1,6 +1,7 @@
 from src.electric_car import ElectricCar
 from src.electric_scooter import ElectricScooter
 from fleet.fleet_manager import FleetManager
+from utils.csv_handler import save_to_csv
 #UC6-Fleet management
 def show_menu():
     print("1. Add Hub")
@@ -12,7 +13,8 @@ def show_menu():
     print("7. Fleet analysis")
     print("8. sort by Hub name")
     print("9. sort by fare price(high to low)")
-    print("10. Exit")
+    print("10.save data to csv")
+    print("11.Exit")
 def main():
     print("Welcome to Eco-Ride Urban Mobility System")
     manager = FleetManager()
@@ -99,6 +101,9 @@ def main():
             for v in manager.search_by_hub(hub):
                 print(v)
         elif choice == "10":
+            save_to_csv("data/fleet_data.csv", manager.hubs)
+            print("Saved to CSV.")
+        elif choice == "11":
             print("Exiting system...")
             break
         else:
